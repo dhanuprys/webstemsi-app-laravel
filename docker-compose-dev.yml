@@ -1,0 +1,18 @@
+version: "3.6"
+
+services:
+  web:
+    container_name: webstemsi-app
+    image: dhanuprys/webstemsi-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./:/var/www/html"
+    env_file:
+      - .env
+  
+  database:
+    container_name: webstemsi-database
+    image: mariadb
+    ports:
+      - "7463:3306"
